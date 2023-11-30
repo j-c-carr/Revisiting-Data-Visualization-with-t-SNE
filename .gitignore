@@ -1,5 +1,5 @@
-datasets/*
-!datasets/.gitkeep
+data/*
+!data/datasets/.gitkeep
 
 
 # Byte-compiled / optimized / DLL files
