@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
 from sklearn.datasets import fetch_openml, fetch_olivetti_faces
 import logging
-logging.basicConfig(level=logging.DEBUG)
+logging.basicConfig(level=logging.INFO)
 
 
 def load_data(dset_name, save_if_not_found=False, classes=None, samples_per_class=None):

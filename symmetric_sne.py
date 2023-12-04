@@ -259,3 +259,11 @@ def estimate_sne(X, y, P, num_iters, learning_rate, momentum, seed=1):
             Y_m1 = Y.copy()
 
     return Y
+
+def q_joint_tsne(Y):
+    """t-SNE: Given low-dimensional representations Y, compute
+    matrix of joint probabilities with entries q_ij."""
+    distances = neg_squared_euc_dists(Y)
+    inv_distances = np.power(1. - distances, -1)
+    np.fill_diagonal(inv_distances, 0.)
+    return inv_distances / np.sum(inv_distances), inv_distances
