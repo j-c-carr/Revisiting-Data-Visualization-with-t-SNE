@@ -2,8 +2,9 @@ data/datasets/*
 !data/datasets/.gitkeep
 data/p_joint/*
 !data/p_joint/.gitkeep
+out/map_points/*
+!out/map_points/.gitkeep
 !data/.gitkeep
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
