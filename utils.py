@@ -4,35 +4,35 @@ from matplotlib.colors import Normalize
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import numpy as np
 
-def plot_2d_visualization(X_2d, y, figsize=(12, 12), dpi=100, title=None, legend=True, show=True, save=False):
+def plot_2d_visualization(X_2d, y, s=10, figsize=(12, 12), dpi=100, title=None, legend=True, show=True, save=False):
     """
     Plot 2D visualization of the data
     """
     plt.figure(figsize=figsize, dpi=dpi)
-    plt.scatter(X_2d[:, 0], X_2d[:, 1], c=y, cmap=plt.cm.gist_rainbow, s=10)
+    plt.scatter(X_2d[:, 0], X_2d[:, 1], c=y, cmap=plt.cm.gist_rainbow, s=s)
     plt.clim(-0.5, 9.5)
     plt.axis('off')
 
     if legend:
         norm = Normalize(vmin=0, vmax=9)
         legend_handles = [Line2D([0], [0], marker='o', color='w', label=str(i),
-                                markerfacecolor=plt.cm.gist_rainbow(norm(i)), markersize=5) for i in range(10)]
+                                markerfacecolor=plt.cm.gist_rainbow(norm(i)), markersize=5) for i in range(s)]
         plt.legend(handles=legend_handles, bbox_to_anchor=(1.05, 1), loc='upper right', borderaxespad=0.)
     if save:
         plt.savefig(f"out/{title}.png")
     if show:
         plt.show()
 
-def plot_digits_on_points(X_orig, X_2d, y, figsize=(12, 12), dpi=100, legend=True, color=True, show=True):
+def plot_imgs_on_points(X_orig, X_2d, y, img_shape=[28, 28], s=10, figsize=(12, 12), dpi=100, legend=True, color=True, show=True):
     """
     Plot the digits on the 2D visualization using gist_rainbow colormap
     """
     
     fig, ax = plt.subplots(figsize=figsize, dpi=dpi)
-    scatter = ax.scatter(X_2d[:, 0], X_2d[:, 1], c=y, cmap='gist_rainbow', s=10, alpha=0.0)
+    scatter = ax.scatter(X_2d[:, 0], X_2d[:, 1], c=y, cmap='gist_rainbow', s=s, alpha=0.0)
 
     for i in range(X_orig.shape[0]):
-        img = X_orig[i].reshape(28, 28)  
+        img = X_orig[i].reshape(img_shape[0], img_shape[1])  
         inverted_digit = 1 - (img > 0.5).astype(float)  # invert colors
         alpha_channel = (img > 0.5).astype(float)  # set alpha channel based on the digit
 
@@ -54,7 +54,7 @@ def plot_digits_on_points(X_orig, X_2d, y, figsize=(12, 12), dpi=100, legend=Tru
         if legend:
             norm = Normalize(vmin=0, vmax=9)
             legend_handles = [Line2D([0], [0], marker='o', color='w', label=str(i),
-                                    markerfacecolor=plt.cm.gist_rainbow(norm(i)), markersize=5) for i in range(10)]
+                                    markerfacecolor=plt.cm.gist_rainbow(norm(i)), markersize=5) for i in range(s)]
             ax.legend(handles=legend_handles, bbox_to_anchor=(1.05, 1), loc='upper right', borderaxespad=0.)
 
     ax.axis('off')
