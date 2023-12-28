@@ -1,3 +1,7 @@
+"""Modification of sammon mapping function from https://github.com/tompollard/sammon/blob/master/sammon.py
+
+Author: Tom Pollard, adapted by @j-c-carr
+"""
 def sammon(x, n, display = 2, inputdist = 'raw', maxhalves = 20, maxiter = 500, tolfun = 1e-9, init = 'default'):
 
     import numpy as np 

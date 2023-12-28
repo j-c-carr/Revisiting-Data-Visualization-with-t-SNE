@@ -1,7 +1,7 @@
 """
 Functions to fit Symmetric SNE
 
-Author: Liam Schoneveld, adapted by j-c-carr
+Author: Liam Schoneveld, adapted by @j-c-carr
 """
 import pickle
 import numpy as np
