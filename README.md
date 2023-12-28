@@ -34,7 +34,7 @@ To use this project, follow these steps:
 jupyter notebook
 ```
 * Open the relevant Jupyter notebooks, such as:
-  - `experiments.ipynb`: reproduces the [original paper](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf)'s results
+  - `reproduce_original_plots.ipynb`: reproduces the [original paper](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf)'s results
   - `pca_analysis.ipynb`: ablation studies for studying the effect of PCA reduction on t-SNE visualization
   - `crowding_problem.ipynb`: compares t-SNE to symmetric SNE in order to visualize the "Crowding Problem" (described in Section 3.2.1 of `report.pdf`)
 
