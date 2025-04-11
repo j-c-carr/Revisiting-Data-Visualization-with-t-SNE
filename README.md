@@ -1,5 +1,5 @@
 # Revisiting Data Visualization with t-SNE: A Reproduction Study
-**Description:** This is an reproducibility report for the paper ["Visualizing Data using t-SNE"](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf). 
+**Description:** This is a machine learning reproducibility report for the paper ["Visualizing Data using t-SNE"](https://www.jmlr.org/papers/volume9/vandermaaten08a/vandermaaten08a.pdf). 
 * First, we reproduce the t-SNE visualizations on the three datasets considered in the paper, comparing t-SNE to Sammon Mapping, Isomap and Locally Linear Embedding visualizations.
 * We then perform ablation studies that verify the effectiveness of t-SNE in alleviating the crowding problem, the use of PCA reduction in data preprocessing, and generalization error of classifiers trained on the visualization data.
 * Overall, we found it relatively straightforward to reproduce the results.
